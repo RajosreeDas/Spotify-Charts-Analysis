@@ -70,7 +70,7 @@ order by deezer_playlists desc
 --kon year e streaming besi hyeche
 --amount of trcaks released each year between 2008-2023
 
---year with Hihest streaming in 2923
+--year with Hihest streaming in 2023
 WITH DateCTE AS(
 SELECT CONVERT(DATE, 
                CAST(released_year AS VARCHAR(4)) + '-' + 
