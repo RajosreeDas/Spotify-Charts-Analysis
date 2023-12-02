@@ -21,8 +21,8 @@ select distinct(released_year) from Spotify2023
 order by released_year ASC
 
 --Spotify was launched in the year 2006 so we will only consider the data from 2008
-select COUNT(*) from Spotify2023
-where released_year between 2008 AND 2023;
+--select COUNT(*) from Spotify2023
+--where released_year between 2008 AND 2023;
 
 --top 10 song with highest streams
 select TOP 10 artist_name, track_name, max(streams) as highest_stream from Spotify2023
@@ -38,22 +38,15 @@ order by highest_steaming_artist DESC;
 
 --Most streamed artist - The Weeknd
 
-select distinct(artist_name)from Spotify2023
+--select distinct(artist_name)from Spotify2023
 --group by  artist_name
 --order by highest_stream DESC;
 
 --Top 10 artist with most no of songs 
-
 select  TOP 10 artist_name, COUNT(track_name) as no_of_songs, COUNT(track_name) /(select  COUNT(*) from Spotify2023) as percen  from Spotify2023
 --WHERE streams = (SELECT MAX(streams) FROM Spotify2023)
 group by artist_name
 order by no_of_songs DESC
-
-
---select artist_name, track_name,  streams as highest_stream from Spotify2023
---group by artist_name 
---group by  artist_name, streams
---order by highest_stream DESC;
 
 --no of times artist shows up in playlist
 
@@ -66,9 +59,7 @@ order by spotify_palylist_count DESC
 
 select deezer_playlists from Spotify2023
 order by deezer_playlists desc
---ekta coloumn add for release year
---kon year e streaming besi hyeche
---amount of trcaks released each year between 2008-2023
+
 
 --year with Hihest streaming in 2023
 WITH DateCTE AS(
